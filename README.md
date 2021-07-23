@@ -1,7 +1,7 @@
 # raccoonbot
 Pretty basic discord bot designed with **learning-purposes** only.\
 Coded in NodeJS enviroment.\
-Language: ES.\
+Language: ESP.\
 \
 Among its features:
 - Greet user
