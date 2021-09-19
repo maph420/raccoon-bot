@@ -1,8 +1,6 @@
-const typing = require('../functions/typingTime.js');
-
 var factorial = (factOf) => {
 	var fact=1; 
-	for(var i=factOf;i>0;i--) fact *= i;
+	for(var i=factOf;--i>0;) fact *= (i+1);
 	return fact;
 };
 
@@ -12,20 +10,20 @@ module.exports = {
 	execute(message, args) {
         var expectedArgs=1;
         if(!args.length){
-            typing.typingTime(message,700);
-            message.channel.send("No pasaste argumentos para "+factorial.name+", "+message.author+" chinchulin.");
+            message.channel.sendTyping();
+            message.reply(`No pasaste argumentos para ${factorial.name}, ${message.author} chinchulin.`); /*message.author now returns uid instead of mentioning user*/
         }
         else if (args.length > expectedArgs){
-            typing.typingTime(message,700);
-            message.channel.send("Demasiados argumentos para "+factorial.name+", "+message.author+"! (Se esperaban: "+expectedArgs+") ")
+            message.channel.sendTyping();
+            message.reply(`Demasiados argumentos para ${factorial.name}, ${message.author}! (Se esperaban: ${expectedArgs}) `)
         }  
         else if (args > 170){
-            typing.typingTime(message,700);
-            message.channel.send("Oops, ese numero es muy grande para que discord lo represente! (Tiende a infinito)")
+            message.channel.sendTyping();
+            message.reply(`Oops, ese numero es demasiado grande, proba con un valor mas pequeño, ${message.author} :p`)
         }
         else{
-            typing.typingTime(message,700);
-            message.channel.send("Factorial de "+args+" --> "+factorial(args)+"");
+            message.channel.sendTyping();
+            message.reply(`Factorial de ${args}  ➡️  ${factorial(args)}`);
         }
 	},
 };

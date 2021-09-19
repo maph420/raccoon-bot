@@ -9,8 +9,9 @@
   "author": "maph",
   "license": "ISC",
   "dependencies": {
-    "discord.js": "^11.5.1",
+    "discord.js": "^13.1.0",
     "imageapi.js": "^1.7.0",
-    "random-puppy": "^1.1.0"
+    "random-puppy": "^1.1.0",
+    "ytdl-core": "^4.9.1"
   }
 }

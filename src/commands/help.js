@@ -1,5 +1,4 @@
 const disc = require('discord.js');
-const typing = require('../functions/typingTime.js');
 
 module.exports = {
 	name: 'help',
@@ -17,13 +16,6 @@ module.exports = {
                     name: '%raccoon',
                     value: 'Mapache aleatorio!',
                 },
-
-                /* empty field */
-                /*{
-                    name: '\u200b',
-                    value: '\u200b',
-                    inline: false,
-                },*/
 
                 {
                     name: '%saluda',
@@ -52,8 +44,8 @@ module.exports = {
             ],
             timestamp: new Date(),
         };
-        typing.typingTime(message,800);
-        message.channel.send({ embed: raccoonBotHelpEmbed });
+        message.channel.sendTyping();
+        message.channel.send({ embeds: [raccoonBotHelpEmbed] });
 	},
 };
 
